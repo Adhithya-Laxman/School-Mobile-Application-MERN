@@ -1,13 +1,14 @@
-// Express application setup goes here
 const express = require('express');
+const body_parser = require('body-parser');
+const studentRouter = require('./src/routes/studentRoutes')
+
+
+
 const app = express();
+app.use(body_parser.json());
 
-// Sample route
+app.use('/',studentRouter);
 
-// app.use(express.json());
-// app.use(express.urlencoded({
-//   extended: true
-// }));
 
 
 module.exports = app;
